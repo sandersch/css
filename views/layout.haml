@@ -1,4 +1,23 @@
 %html
   %link(rel="stylesheet" type="text/css" href="style.css")
   %title CSS Playground
-  = yield
+
+  .header
+    %p
+      Header/Top Bar
+
+  .table_of_contents
+    %p
+      Table of Contents
+    %ul.toc
+      - (1..4).each do |i|
+        %li.toc_entry
+          %a.toc_link
+            link #{i}
+
+  .main
+    = yield
+
+  .footer
+    %p
+      Footer
